@@ -1,0 +1,35 @@
+{
+  "name": "html-auto-preview",
+  "displayName": "HTML Auto Preview",
+  "description": "Automatically opens Simple Browser alongside any HTML file you open in Cursor",
+  "version": "1.0.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onLanguage:html"],
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "contributes": {
+    "configuration": {
+      "title": "HTML Auto Preview",
+      "properties": {
+        "htmlAutoPreview.openEditor": {
+          "type": "boolean",
+          "default": false,
+          "description": "Also open the HTML file in the text editor alongside Simple Browser. When false, only Simple Browser opens."
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "@vscode/vsce": "^2.22.0"
+  }
+}
