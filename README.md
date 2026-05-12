@@ -18,9 +18,9 @@ AI coding agents like Claude, Claude Code, and Cursor generate HTML files as ric
 Search **ContextHTML** in the VS Code or Cursor extension marketplace, or install via CLI:
 
 ```bash
-cursor --install-extension ashvinbondada.html-auto-preview
+cursor --install-extension ashvinbondada.contexthtml
 # or
-code --install-extension ashvinbondada.html-auto-preview
+code --install-extension ashvinbondada.contexthtml
 ```
 
 ## Configuration

@@ -1,8 +1,8 @@
 {
-  "name": "html-auto-preview",
+  "name": "contexthtml",
   "displayName": "ContextHTML",
   "description": "Automatically opens Simple Browser alongside any HTML file you open in Cursor",
-  "version": "1.1.1",
+  "version": "1.0.0",
   "publisher": "ashvinbondada",
   "icon": "icon.png",
   "engines": {
@@ -21,9 +21,9 @@
   },
   "contributes": {
     "configuration": {
-      "title": "HTML Auto Preview",
+      "title": "ContextHTML",
       "properties": {
-        "htmlAutoPreview.openEditor": {
+        "contexthtml.openEditor": {
           "type": "boolean",
           "default": false,
           "description": "Also open the HTML file in the text editor alongside Simple Browser. When false, only Simple Browser opens."

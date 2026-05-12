@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
     lastOpenedUri = uriString;
 
     const openEditor = vscode.workspace
-      .getConfiguration('htmlAutoPreview')
+      .getConfiguration('contexthtml')
       .get<boolean>('openEditor', false);
 
     vscode.commands.executeCommand('simpleBrowser.show', uriString).then(() => {
