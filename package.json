@@ -1,6 +1,6 @@
 {
   "name": "gossamer",
-  "displayName": "Gossamer",
+  "displayName": "Gossamer Preview",
   "description": "Instantly preview AI-generated HTML files in the Cursor/VS Code Simple Browser without leaving your editor",
   "version": "1.0.0",
   "publisher": "ashvinbondada",

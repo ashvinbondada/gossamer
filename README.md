@@ -1,4 +1,4 @@
-# Gossamer
+# Gossamer Preview
 
 ![Gossamer](https://raw.githubusercontent.com/ashvinbondada/gossamer/main/gossamer.png)
 
@@ -6,7 +6,7 @@ Instantly preview AI-generated HTML files in the Cursor/VS Code Simple Browser w
 
 ## The Workflow
 
-AI coding agents like Claude, Claude Code, and Cursor generate HTML files as rich visual context — layouts, component mockups, data visualizations, design specs. Gossamer automatically opens those files in the built-in browser the moment you open them, so you can see the rendered output alongside your code without any manual steps.
+AI coding agents like Claude, Claude Code, and Cursor generate HTML files as rich visual context — layouts, component mockups, data visualizations, design specs. Gossamer Preview automatically opens those files in the built-in browser the moment you open them, so you can see the rendered output alongside your code without any manual steps.
 
 ## How It Works
 
@@ -17,7 +17,7 @@ AI coding agents like Claude, Claude Code, and Cursor generate HTML files as ric
 
 ## Installation
 
-Search **Gossamer** in the VS Code or Cursor extension marketplace, or install via CLI:
+Search **Gossamer Preview** in the VS Code or Cursor extension marketplace, or install via CLI:
 
 ```bash
 cursor --install-extension ashvinbondada.gossamer
