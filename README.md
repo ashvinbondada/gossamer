@@ -1,4 +1,4 @@
-# ContextHTML
+# Clarity
 
 Instantly preview AI-generated HTML files in the Cursor/VS Code Simple Browser without leaving your editor.
 
@@ -15,7 +15,7 @@ AI coding agents like Claude, Claude Code, and Cursor generate HTML files as ric
 
 ## Installation
 
-Search **ContextHTML** in the VS Code or Cursor extension marketplace, or install via CLI:
+Search **Clarity** in the VS Code or Cursor extension marketplace, or install via CLI:
 
 ```bash
 cursor --install-extension ashvinbondada.contexthtml
