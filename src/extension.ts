@@ -1,5 +1,7 @@
 import * as vscode from 'vscode';
 
+const CONFIG_KEY = 'gossamer-preview';
+
 let lastOpenedUri = '';
 
 export function registerOpenListener(
@@ -22,7 +24,7 @@ export function registerOpenListener(
     lastOpenedUri = uriString;
 
     const openEditor = vscode.workspace
-      .getConfiguration('gossamer-preview')
+      .getConfiguration(CONFIG_KEY)
       .get<boolean>('openEditor', false);
 
     const previewUrl = getPreviewUrl(uriString);
@@ -46,7 +48,7 @@ export function registerOpenListener(
 }
 
 export async function activate(context: vscode.ExtensionContext) {
-  registerOpenListener(context, (fileUri) => fileUri);
+  registerOpenListener(context, (fileUri: string) => fileUri);
 }
 
 export function deactivate() {}
