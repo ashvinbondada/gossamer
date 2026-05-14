@@ -2,7 +2,10 @@ import * as vscode from 'vscode';
 
 let lastOpenedUri = '';
 
-export function activate(context: vscode.ExtensionContext) {
+export function registerOpenListener(
+  context: vscode.ExtensionContext,
+  getPreviewUrl: (fileUri: string) => string
+) {
   const listener = vscode.workspace.onDidOpenTextDocument((doc) => {
     if (doc.uri.scheme !== 'file') {
       return;
@@ -22,9 +25,9 @@ export function activate(context: vscode.ExtensionContext) {
       .getConfiguration('gossamer-preview')
       .get<boolean>('openEditor', false);
 
-    vscode.commands.executeCommand('simpleBrowser.show', uriString).then(() => {
+    const previewUrl = getPreviewUrl(uriString);
+    vscode.commands.executeCommand('simpleBrowser.show', previewUrl).then(() => {
       if (!openEditor) {
-        // Close the editor tab that was just opened for this HTML file
         vscode.window.tabGroups.all.forEach((group) => {
           group.tabs.forEach((tab) => {
             if (
@@ -40,6 +43,10 @@ export function activate(context: vscode.ExtensionContext) {
   });
 
   context.subscriptions.push(listener);
+}
+
+export async function activate(context: vscode.ExtensionContext) {
+  registerOpenListener(context, (fileUri) => fileUri);
 }
 
 export function deactivate() {}
