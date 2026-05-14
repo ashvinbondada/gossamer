@@ -68,11 +68,24 @@ export class LiveReloadServer {
         readyState: 1,
         send: (msg: string) => {
           const payload = Buffer.from(msg);
-          const frame = Buffer.alloc(2 + payload.length);
-          frame[0] = 0x81;
-          frame[1] = payload.length;
-          payload.copy(frame, 2);
-          socket.write(frame);
+          const len = payload.length;
+          let header: Buffer;
+          if (len < 126) {
+            header = Buffer.alloc(2);
+            header[0] = 0x81;
+            header[1] = len;
+          } else if (len < 65536) {
+            header = Buffer.alloc(4);
+            header[0] = 0x81;
+            header[1] = 126;
+            header.writeUInt16BE(len, 2);
+          } else {
+            header = Buffer.alloc(10);
+            header[0] = 0x81;
+            header[1] = 127;
+            header.writeBigUInt64BE(BigInt(len), 2);
+          }
+          socket.write(Buffer.concat([header, payload]));
         },
         terminate: () => socket.destroy(),
       };
